@@ -42,6 +42,7 @@ describe("HandlePromise2 function test", () => {
   });
 });
 
+
 describe("HandlePromise3 variable test", () => {
   const sampleData = [
     { status: "fulfilled", value: "RESOLVED AGAIN" },

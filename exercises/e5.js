@@ -8,8 +8,9 @@
  *          export const Promise
  */
 
-export const attachTitle = () => {
+export const attachTitle = (name) => {
   // Your code goes here...
+  return`DR. ${name}`;
 };
 
 /**
@@ -20,9 +21,19 @@ export const attachTitle = () => {
  * If your program runs successfully, it should print out and return “DR. MANHATTAN” which is extremely exciting.
  */
 
-export const getPromise = () => {
+export const getPromise = async () => {
   // Your code goes here...
+  return Promise.resolve('MANHATTAN')
+  .then(attachTitle)
+  .then((result) => {
+    console.log(result);
+    return result
+  });
+
 };
+
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

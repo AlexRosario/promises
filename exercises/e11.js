@@ -26,10 +26,12 @@ export const usersUrl = 'http://localhost:3000/users/';
  * Example: const getLoginList = (data) => {<Your code>}
 */
 
-const getLoginList = () => {
+const getLoginList = (data) => {
   // Your code goes here...
-
-}
+  
+    return data.map(user => user.login);
+  };
+  
 
 /**
  * @task 
@@ -39,7 +41,7 @@ const getLoginList = () => {
 */
 
 // Your code goes here ...
-const getData;
+const getData = fetch(usersUrl);
 
 /**
  * @task 
@@ -47,13 +49,20 @@ const getData;
  * * Do not forget to convert the response to a JavaScript array when resolved
  * * Use the getLoginList() function to log the array of logins from fetched data in the console
  * * Return the array of logins when resolved 
- * Example: const result = getData
+ * Example: const result = getData\
  *  .then(<Your_converting_code>)
  *  .then(<Your_logging_and_return_code>)
 */
 
 // Your code goes here ...
-export const result = getData;
+export const result = getData
+.then(response=> response.json())
+.then(data=> {
+  const users = getLoginList(data)
+  
+  console.log(users);
+  return users;
+})
 
 
 // === TEST YOURSELF ===
