@@ -21,10 +21,13 @@ export const handlePromise = () => {
     reject('REJECTED!');
   })
 
-.catch((err)=> {
-  console.log(err);
-  return err})
-.finally(() => {console.log('This promise is finished!')});
+    .catch((err)=> {
+      console.log(err);
+      return err
+    })
+    .finally(() => {
+      console.log('This promise is finished!');
+    });
 };
 
 // === TEST YOURSELF ===

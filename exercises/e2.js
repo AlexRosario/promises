@@ -36,10 +36,11 @@ export const getPromise = (bool) => {
  * The handlePromise() function must be exported
  */
 
-export const handlePromise = (gP) => {
+export const handlePromise = (promise) => {
   // Your code goes here...
-  return gP
-  .then(null,
+  return promise
+  .then(
+    (value) => value,
     () => "Uh Oh"
   );
 };

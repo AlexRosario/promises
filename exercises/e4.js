@@ -21,8 +21,9 @@ const second = (val) => {
  */
 
 // Refactor the following code...
-export const handlePromise = first().then((res) => second(res));
-handlePromise.then((val) => {
+export const handlePromise = first()
+.then((res) => second(res))
+.then((val) => {
   console.log(val);
   return val;
 });
